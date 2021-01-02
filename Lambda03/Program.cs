@@ -12,7 +12,9 @@ namespace Lambda03 {
             list.Add(new Product("Tablet", 350.50));
             list.Add(new Product("HD Case", 80.90));
 
-            list.ForEach(UpdatePrice);
+            Action<Product> action = UpdatePrice;
+
+            list.ForEach(action);
             foreach (Product item in list) {
                 Console.WriteLine(item);
             }
