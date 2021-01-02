@@ -12,16 +12,12 @@ namespace Lambda03 {
             list.Add(new Product("Tablet", 350.50));
             list.Add(new Product("HD Case", 80.90));
 
-            Action<Product> action = UpdatePrice;
+            Action<Product> action = p => { p.Price += p.Price * 0.1; };
 
             list.ForEach(action);
             foreach (Product item in list) {
                 Console.WriteLine(item);
             }
-        }
-
-        static void UpdatePrice(Product p) {
-            p.Price += p.Price * 0.1;
         }
     }
 }
